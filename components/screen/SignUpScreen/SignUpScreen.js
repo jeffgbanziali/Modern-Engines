@@ -3,8 +3,10 @@ import { View, Text, Image, StyleSheet } from "react-native";
 //import Logo from '../../../assets/Logo/snack-icon.png';
 import Login from "../../../components/Login/Login";
 import Button from "../../Button/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const SingUpScreen = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [userprename, setUserprename] = useState("");
   const [email, setEmail] = useState("");
@@ -13,18 +15,17 @@ const SingUpScreen = () => {
 
   const onRegisterPressed = () => {
     console.log("Register");
+    navigation.navigate("Email");
+  };
+  const onSignInPressed = () => {
+    console.warn("Sign in");
+    navigation.navigate("SignIn");
   };
   const onTermsOfUsePressed = () => {
     console.log("onTermsOfUsePressed");
   };
   const onPrivacyPressed = () => {
     console.log("onPrivacyPressed");
-  };
-  const onFotgotPasswordPressed = () => {
-    console.log("FotgotPasswordPressed");
-  };
-  const onSingUpPress = () => {
-    console.log("onSingUpPress");
   };
 
   return (
@@ -50,6 +51,7 @@ const SingUpScreen = () => {
         secureTextEntry={true}
       />
       <Button text="S'inscrire" onPress={onRegisterPressed} />
+      <Button text="Se connecter" onPress={onSignInPressed} />
 
       <Text style={styles.text}>
         By registering, you confirm that you accept our {""}

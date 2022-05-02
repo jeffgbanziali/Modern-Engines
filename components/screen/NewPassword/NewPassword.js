@@ -3,16 +3,20 @@ import { View, Text, Image, StyleSheet } from "react-native";
 //import Logo from '../../../assets/Logo/snack-icon.png';
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const NewPassword = () => {
   const [code, setCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const navigation = useNavigation();
 
   const onSubmitPressed = () => {
     console.log("onSubmitPressed");
+    navigation.navigate("HomeScreen");
   };
-  const onSignInPress = () => {
+  const onSignInPressed = () => {
     console.log("onSingInPress");
+    navigation.navigate("SignIn");
   };
 
   return (
@@ -27,7 +31,7 @@ const NewPassword = () => {
       />
       <Button text="Renvoyer" onPress={onSubmitPressed} />
 
-      <Button text="Se connecter" onPress={onSignInPress} type="QUATERY" />
+      <Button text="Se connecter" onPress={onSignInPressed} type="QUATERY" />
     </View>
   );
 };

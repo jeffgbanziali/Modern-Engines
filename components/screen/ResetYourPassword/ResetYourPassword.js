@@ -3,18 +3,19 @@ import { View, Text, Image, StyleSheet } from "react-native";
 //import Logo from '../../../assets/Logo/snack-icon.png';
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const ResetYourPassword = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState("");
 
-  const onConfirmPressed = () => {
-    console.log("onConfirmPressed");
+  const onSendPressed = () => {
+    console.log("onSendPressed");
+    navigation.navigate("NewPassword");
   };
   const onSignInPress = () => {
     console.log("onSingInPress");
-  };
-  const onRessendPress = () => {
-    console.log("onRessendPress");
+    navigation.navigate("SignIn");
   };
 
   return (
@@ -26,7 +27,7 @@ const ResetYourPassword = () => {
         value={username}
         setValue={setUsername}
       />
-      <Button text="Renvoyer" onPress={onRessendPress} />
+      <Button text="Renvoyer" onPress={onSendPressed} />
       <Button text="Se connecter" onPress={onSignInPress} type="QUATERY" />
     </View>
   );

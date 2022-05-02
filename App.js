@@ -1,10 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { StyleSheet, View } from "react-native";
+import Navigation from "./Navigation/Navigation";
 
-import HomeScreen from "./Navigation/Navigation";
-const Stack = createNative;
 const App = () => {
   return (
     <View style={styles.root}>

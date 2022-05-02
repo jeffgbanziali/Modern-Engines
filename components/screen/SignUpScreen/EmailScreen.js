@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const EmailScreen = () => {
   const [code, setCode] = useState("");
+  const navigation = useNavigation();
 
   const onConfirmPressed = () => {
     console.log("onConfirmPressed");
+    navigation.navigate("HomeScreen");
   };
   const onSignInPress = () => {
     console.log("onSingInPress");
+    navigation.navigate("SignIn");
   };
   const onRessendPress = () => {
     console.log("onRessendPress");
