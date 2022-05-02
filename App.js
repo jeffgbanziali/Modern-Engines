@@ -13,7 +13,7 @@ const App = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "#425CB6",
+    backgroundColor: "black",
   },
 });
 export default App;

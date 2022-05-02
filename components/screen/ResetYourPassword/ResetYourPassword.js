@@ -4,13 +4,14 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
 import { useNavigation } from "@react-navigation/native";
+import { useForm } from "react-hook-form";
 
 const ResetYourPassword = () => {
   const navigation = useNavigation();
-  const [username, setUsername] = useState("");
+  const { control, handleSubmit } = useForm();
 
-  const onSendPressed = () => {
-    console.log("onSendPressed");
+  const onSendPressed = (data) => {
+    console.warn(data);
     navigation.navigate("NewPassword");
   };
   const onSignInPress = () => {
@@ -23,11 +24,14 @@ const ResetYourPassword = () => {
       <Text style={styles.title}>Réinitialiser votre mot de passe</Text>
 
       <Login
+        name="username"
+        control={control}
         placeholder="Entrer votre identifiant"
-        value={username}
-        setValue={setUsername}
+        rules={{
+          required: "Username is required",
+        }}
       />
-      <Button text="Renvoyer" onPress={onSendPressed} />
+      <Button text="Renvoyer" onPress={handleSubmit(onSendPressed)} />
       <Button text="Se connecter" onPress={onSignInPress} type="QUATERY" />
     </View>
   );

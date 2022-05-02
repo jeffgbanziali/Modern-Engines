@@ -1,17 +1,23 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+
+import { useForm, Controller } from "react-hook-form";
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
 
 const SignInScreen = () => {
   const navigation = useNavigation();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    control,
+    handleSubmit,
+    formState: { error },
+  } = useForm();
+  console.log(error);
 
-  const onSignInPressed = () => {
-    console.warn("Sign in");
+  const onSignInPressed = (data) => {
+    console.log(data);
     navigation.navigate("HomeScreen");
   };
   const onForgotPasswordPressed = () => {
@@ -20,23 +26,31 @@ const SignInScreen = () => {
   };
 
   const onSingUpPressed = () => {
-    console.warn("Sign up");
     navigation.navigate("SignUp");
   };
   return (
     <View style={styles.root}>
       <Login
-        placeholder="E-mail ou numéro de téléphone"
-        value={username}
-        setValue={setUsername}
+        name="username"
+        placeholder="Username"
+        control={control}
+        rules={{ required: "Username is required" }}
       />
+
       <Login
-        placeholder="Mot de passe"
-        value={password}
-        setValue={setPassword}
-        secureTextEntry={true}
+        name="password"
+        placeholder="Password"
+        secureTextEntry
+        control={control}
+        rules={{
+          required: "Password is required",
+          minLength: {
+            value: 3,
+            message: "Password should be minimum 3 characters long",
+          },
+        }}
       />
-      <Button onPress={onSignInPressed} />
+      <Button text="Se connecter" onPress={handleSubmit(onSignInPressed)} />
       <Button
         text="Mot de passe"
         onPress={onForgotPasswordPressed}

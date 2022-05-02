@@ -3,13 +3,15 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";
 import { useNavigation } from "@react-navigation/native";
+import { useForm } from "react-hook-form";
 
 const EmailScreen = () => {
-  const [code, setCode] = useState("");
+  const { control, handleSubmit } = useForm();
+
   const navigation = useNavigation();
 
-  const onConfirmPressed = () => {
-    console.log("onConfirmPressed");
+  const onConfirmPressed = (data) => {
+    console.warn(data);
     navigation.navigate("HomeScreen");
   };
   const onSignInPress = () => {
@@ -25,12 +27,27 @@ const EmailScreen = () => {
       <Text style={styles.title}>Confirmer</Text>
 
       <Login
-        placeholder="Entrer votre code de confirmation"
-        value={code}
-        setValue={setCode}
+        placeholder="Entrer votre identifiant"
+        name="username"
+        control={control}
         secureTextEntry={true}
+        rules={{
+          required: "Username code is required",
+        }}
       />
-      <Button text="Confirmer le code" onPress={onConfirmPressed} />
+      <Login
+        placeholder="Entrer votre code de confirmation"
+        name="code"
+        control={control}
+        secureTextEntry={true}
+        rules={{
+          required: "Confirmation code is required",
+        }}
+      />
+      <Button
+        text="Confirmer le code"
+        onPress={handleSubmit(onConfirmPressed)}
+      />
       <Button
         text="Renvoyer le code"
         onPress={onRessendPress}

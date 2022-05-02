@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
 //import Logo from '../../../assets/Logo/snack-icon.png';
 import Login from "../../../components/Login/Login";
 import Button from "../../Button/Button";
 import { useNavigation } from "@react-navigation/native";
+import { useForm } from "react-hook-form";
 
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const SingUpScreen = () => {
   const navigation = useNavigation();
-  const [username, setUsername] = useState("");
-  const [userprename, setUserprename] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordRepeat, setPasswordRepeat] = useState("");
-
+  const { control, handleSubmit, watch } = useForm();
+  const pwd = watch("password");
   const onRegisterPressed = () => {
     console.log("Register");
     navigation.navigate("Email");
@@ -29,41 +28,87 @@ const SingUpScreen = () => {
   };
 
   return (
-    <View style={styles.root}>
-      <Text style={styles.title}>Créer un compte</Text>
-      <Login placeholder="Nom" value={username} setValue={setUsername} />
-      <Login
-        placeholder="Prénom"
-        value={userprename}
-        setValue={setUserprename}
-      />
-      <Login placeholder="Email" value={email} setValue={setEmail} />
-      <Login
-        placeholder="Mot de passe"
-        value={password}
-        setValue={setPassword}
-        secureTextEntry={true}
-      />
-      <Login
-        placeholder="Confirmer le mot de passe"
-        value={passwordRepeat}
-        setValue={setPasswordRepeat}
-        secureTextEntry={true}
-      />
-      <Button text="S'inscrire" onPress={onRegisterPressed} />
-      <Button text="Se connecter" onPress={onSignInPressed} />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.root}>
+        <Text style={styles.title}>Créer un compte</Text>
+        <Login
+          placeholder="Nom"
+          name="username"
+          control={control}
+          rules={{
+            required: "Name is required",
+            minLength: {
+              value: 3,
+              message: "Name should be at least 3 characters long",
+            },
+            maxLength: {
+              value: 24,
+              message: "Name should be max 24 characters long",
+            },
+          }}
+        />
+        <Login
+          placeholder="Prénom"
+          name="prename"
+          control={control}
+          rules={{
+            required: "Prename is required",
+            minLength: {
+              value: 3,
+              message: "Prename should be at least 3 characters long",
+            },
+            maxLength: {
+              value: 24,
+              message: "Prename should be max 24 characters long",
+            },
+          }}
+        />
+        <Login
+          placeholder="Email"
+          name="email"
+          control={control}
+          rules={{
+            required: "Email is required",
+            pattern: { value: EMAIL_REGEX, message: "Email is invalid" },
+          }}
+        />
+        <Login
+          placeholder="Mot de passe"
+          name="password"
+          control={control}
+          rules={{
+            required: "Password is required",
+            minLength: {
+              value: 8,
+              message: "Password should be at least 8 characters long",
+            },
+          }}
+          secureTextEntry={true}
+        />
+        <Login
+          placeholder="Confirmer le mot de passe"
+          name="Password-repeat"
+          control={control}
+          rules={{
+            validate: (value) => value === pwd || "Password do not match",
+          }}
+          secureTextEntry={true}
+        />
+        <Button text="S'inscrire" onPress={handleSubmit(onRegisterPressed)} />
+        <Button text="Se connecter" onPress={handleSubmit(onSignInPressed)} />
 
-      <Text style={styles.text}>
-        By registering, you confirm that you accept our {""}
-        <Text style={styles.link} onPress={onTermsOfUsePressed}>
-          Terms Use
-        </Text>{" "}
-        and {""}
-        <Text style={styles.link} onPress={onPrivacyPressed}>
-          Privacy Policy{" "}
+        <Text style={styles.text}>
+          By registering, you confirm that you accept our {""}
+          <Text style={styles.link} onPress={onTermsOfUsePressed}>
+            Terms Use
+          </Text>{" "}
+          and {""}
+          <Text style={styles.link} onPress={onPrivacyPressed}>
+            Privacy Policy{" "}
+          </Text>
         </Text>
-      </Text>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
