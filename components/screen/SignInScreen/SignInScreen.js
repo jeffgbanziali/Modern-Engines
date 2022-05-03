@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Image, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
 import { useForm, Controller } from "react-hook-form";
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";

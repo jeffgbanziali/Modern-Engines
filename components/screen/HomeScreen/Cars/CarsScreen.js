@@ -1,19 +1,14 @@
-import * as React from "react";
-import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
+import React from "react";
 
-export default function HomeScreen() {
-  const navigation = useNavigation();
-  const onCarsPressed = () => {
-    navigation.navigate("Cars");
-  };
+const CarsScreen = () => {
   return (
     <ScrollView style={{ backgroundColor: "#2D55A2" }}>
       <View style={{ alignItems: "center", marginTop: 50, marginBottom: -100 }}>
-        <Text style={{ fontSize: 40, color: "white" }}>Menu</Text>
+        <Text style={{ fontSize: 40, color: "white" }}>Voitures</Text>
       </View>
       <View style={{ spaceBetween: 20 }}>
-        <TouchableOpacity style={{ marginTop: "40%" }} onPress={onCarsPressed}>
+        <TouchableOpacity style={{ marginTop: "40%" }}>
           <Image
             style={{
               position: "relative",
@@ -22,7 +17,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/icon-voiture-lrg.png")}
+            source={require("../../../../assets/Image/icon-voiture-lrg.png")}
           />
           <Text
             style={{
@@ -33,7 +28,7 @@ export default function HomeScreen() {
               color: "white",
             }}
           >
-            Voitures
+            Tesla
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={{ marginTop: "-29%", marginLeft: 130 }}>
@@ -44,7 +39,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/images.png")}
+            source={require("../../../../assets/Image/images.png")}
           />
           <Text
             style={{
@@ -68,7 +63,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Image/téléchargement.png")}
           />
           <Text
             style={{
@@ -89,7 +84,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Image/téléchargement.png")}
           />
           <Text
             style={{
@@ -110,7 +105,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Image/téléchargement.png")}
           />
           <Text
             style={{
@@ -133,7 +128,7 @@ export default function HomeScreen() {
               width: 90,
               height: 90,
             }}
-            source={require("../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Image/téléchargement.png")}
           />
           <Text
             style={{
@@ -149,4 +144,6 @@ export default function HomeScreen() {
       </View>
     </ScrollView>
   );
-}
+};
+
+export default CarsScreen;
