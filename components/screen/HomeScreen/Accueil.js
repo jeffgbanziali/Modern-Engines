@@ -3,7 +3,7 @@ import React from "react";
 
 const Accueil = () => {
   return (
-    <ScrollView>
+    <ScrollView ScrollView style={{ backgroundColor: "#2D55A2" }}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text style={{ fontSize: 26, fontWeight: "bold", marginTop: "20%" }}>
           Welcome To

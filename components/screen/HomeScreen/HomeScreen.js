@@ -1,144 +1,146 @@
 import * as React from "react";
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "#2D55A2" }}>
       <View style={{ alignItems: "center", marginTop: 50, marginBottom: -100 }}>
-        <Text style={{ fontSize: 40 }}>Menu</Text>
+        <Text style={{ fontSize: 40, color: "white" }}>Menu</Text>
       </View>
+      <View style={{ spaceBetween: 20 }}>
+        <TouchableOpacity style={{ marginTop: "40%" }}>
+          <Image
+            style={{
+              position: "relative",
 
-      <View
-        style={{ alignItems: "flex-start", display: "flex", marginTop: 200 }}
-      >
-        <Image
-          style={{
-            position: "relative",
-
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/icon-voiture-lrg.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/icon-voiture-lrg.png")}
+          />
+          <Text
+            style={{
+              alignItems: "flex-start",
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 30,
+              color: "white",
+            }}
+          >
+            Voitures
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginTop: "-29%", marginLeft: 130 }}>
+          <Image
+            style={{
+              position: "relative",
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/images.png")}
+          />
+          <Text
+            style={{
+              alignContent: "center",
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 35,
+              color: "white",
+            }}
+          >
+            Bateaux
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ marginTop: "-29%", marginLeft: 260, marginRight: 20 }}
         >
-          Voitures
-        </Text>
-      </View>
-      <View style={{ alignItems: "center", marginTop: -120 }}>
-        <Image
-          style={{
-            position: "relative",
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/images.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
+          <Image
+            style={{
+              position: "relative",
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/téléchargement.png")}
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 30,
+              color: "white",
+            }}
+          >
+            Avions
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginTop: "10%" }}>
+          <Image
+            style={{
+              position: "relative",
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/téléchargement.png")}
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 40,
+              color: "white",
+            }}
+          >
+            Avions
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{ marginTop: "-29%", marginLeft: 130 }}>
+          <Image
+            style={{
+              position: "relative",
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/téléchargement.png")}
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 40,
+              color: "white",
+            }}
+          >
+            Avions
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{ marginTop: "-29%", marginLeft: 260, marginRight: 20 }}
         >
-          Bateaux
-        </Text>
-      </View>
-      <View style={{ alignItems: "flex-end", marginTop: -120 }}>
-        <Image
-          style={{
-            position: "relative",
-
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/téléchargement.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
-        >
-          Avions
-        </Text>
-      </View>
-
-      <View style={{ alignItems: "flex-start", marginTop: 20 }}>
-        <Image
-          style={{
-            position: "relative",
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/icon-voiture-lrg.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
-        >
-          Voitures
-        </Text>
-      </View>
-      <View style={{ alignItems: "flex-end", marginTop: -120 }}>
-        <Image
-          style={{
-            position: "relative",
-
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/icon-voiture-lrg.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
-        >
-          Voitures
-        </Text>
-      </View>
-      <View style={{ alignItems: "center", marginTop: -120 }}>
-        <Image
-          style={{
-            position: "relative",
-            marginHorizontal: 30,
-            width: 90,
-            height: 90,
-          }}
-          source={require("../../../assets/Image/icon-voiture-lrg.png")}
-        />
-        <Text
-          style={{
-            alignItems: "flex-start",
-            fontSize: 20,
-            fontWeight: "bold",
-            marginHorizontal: 30,
-          }}
-        >
-          Voitures
-        </Text>
+          <Image
+            style={{
+              position: "relative",
+              marginHorizontal: 30,
+              width: 90,
+              height: 90,
+            }}
+            source={require("../../../assets/Image/téléchargement.png")}
+          />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: "bold",
+              marginHorizontal: 30,
+              color: "white",
+            }}
+          >
+            Avions
+          </Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

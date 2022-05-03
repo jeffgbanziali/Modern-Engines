@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Image, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 
 import { useForm, Controller } from "react-hook-form";
 import Login from "../../../components/Login/Login";
@@ -29,7 +28,10 @@ const SignInScreen = () => {
     navigation.navigate("SignUp");
   };
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ backgroundColor: "#2D55A2" }}
+    >
       <View style={styles.root}>
         <Login
           name="username"
@@ -69,7 +71,7 @@ const SignInScreen = () => {
 const styles = StyleSheet.create({
   root: {
     alignItems: "center",
-    padding: 60,
+    padding: 40,
     marginTop: "50%",
   },
 });

@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Feather from "react-native-vector-icons/Feather";
 
 import HomeScreen from "../components/screen/HomeScreen/HomeScreen";
@@ -8,26 +8,22 @@ import MenuScreen from "../components/screen/HomeScreen/MenuScreen";
 import FavoriteScreen from "../components/screen/HomeScreen/Favorite";
 import Accueil from "../components/screen/HomeScreen/Accueil";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-        tabBarShowLabel: false,
-        tabBarStyle: { backgroundColor: "blue" },
-        tabBarInactiveColor: "#fff",
-        tabBarActiveTintColor: "red",
-        tabBarActiveTintColor: "red",
-      }}
+      initialRouteName="Feed"
+      activeColor="#e91e63"
+      barStyle={{ backgroundColor: "tomato" }}
     >
       <Tab.Screen
         name="Accueil"
         component={Accueil}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="home" color={color} size={size} />
+          tabBarLabel: "Accueil",
+          tabBarIcon: ({ color }) => (
+            <Feather name="home" color={color} size={26} />
           ),
         }}
       />
@@ -35,8 +31,9 @@ const TabNavigation = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="menu" color={color} size={size} />
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => (
+            <Feather name="menu" color={color} size={26} />
           ),
         }}
       />
@@ -44,8 +41,9 @@ const TabNavigation = () => {
         name="Menu"
         component={MenuScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="heart" color={color} size={size} />
+          tabBarLabel: "Favorite",
+          tabBarIcon: ({ color }) => (
+            <Feather name="heart" color={color} size={24} />
           ),
         }}
       />
@@ -53,8 +51,9 @@ const TabNavigation = () => {
         name="Favorite"
         component={FavoriteScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Feather name="settings" color={color} size={size} />
+          tabBarLabel: "Settings",
+          tabBarIcon: ({ color }) => (
+            <Feather name="settings" color={color} size={24} />
           ),
         }}
       />

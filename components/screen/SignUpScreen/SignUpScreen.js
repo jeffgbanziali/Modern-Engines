@@ -28,7 +28,10 @@ const SingUpScreen = () => {
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ backgroundColor: "#2D55A2" }}
+    >
       <View style={styles.root}>
         <Text style={styles.title}>Créer un compte</Text>
         <Login
