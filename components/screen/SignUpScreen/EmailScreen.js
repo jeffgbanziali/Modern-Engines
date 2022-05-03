@@ -23,42 +23,44 @@ const EmailScreen = () => {
   };
 
   return (
-    <View style={styles.root}>
-      <Text style={styles.title}>Confirmer</Text>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.root}>
+        <Text style={styles.title}>Confirmer</Text>
 
-      <Login
-        placeholder="Entrer votre identifiant"
-        name="username"
-        control={control}
-        secureTextEntry={true}
-        rules={{
-          required: "Username code is required",
-        }}
-      />
-      <Login
-        placeholder="Entrer votre code de confirmation"
-        name="code"
-        control={control}
-        secureTextEntry={true}
-        rules={{
-          required: "Confirmation code is required",
-        }}
-      />
-      <Button
-        text="Confirmer le code"
-        onPress={handleSubmit(onConfirmPressed)}
-      />
-      <Button
-        text="Renvoyer le code"
-        onPress={onRessendPress}
-        type="SECONDARY"
-      />
-      <Button
-        text="Revenir à la connexion"
-        onPress={onSignInPress}
-        type="TERTIARY"
-      />
-    </View>
+        <Login
+          placeholder="Entrer votre identifiant"
+          name="username"
+          control={control}
+          secureTextEntry={true}
+          rules={{
+            required: "Username code is required",
+          }}
+        />
+        <Login
+          placeholder="Entrer votre code de confirmation"
+          name="code"
+          control={control}
+          secureTextEntry={true}
+          rules={{
+            required: "Confirmation code is required",
+          }}
+        />
+        <Button
+          text="Confirmer le code"
+          onPress={handleSubmit(onConfirmPressed)}
+        />
+        <Button
+          text="Renvoyer le code"
+          onPress={onRessendPress}
+          type="SECONDARY"
+        />
+        <Button
+          text="Revenir à la connexion"
+          onPress={onSignInPress}
+          type="TERTIARY"
+        />
+      </View>
+    </ScrollView>
   );
 };
 

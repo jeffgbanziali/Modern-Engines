@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, TextInput } from "react-native";
+import { View, StyleSheet, Image, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
@@ -29,39 +29,41 @@ const SignInScreen = () => {
     navigation.navigate("SignUp");
   };
   return (
-    <View style={styles.root}>
-      <Login
-        name="username"
-        placeholder="Username"
-        control={control}
-        rules={{ required: "Username is required" }}
-      />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.root}>
+        <Login
+          name="username"
+          placeholder="Username"
+          control={control}
+          rules={{ required: "Username is required" }}
+        />
 
-      <Login
-        name="password"
-        placeholder="Password"
-        secureTextEntry
-        control={control}
-        rules={{
-          required: "Password is required",
-          minLength: {
-            value: 3,
-            message: "Password should be minimum 3 characters long",
-          },
-        }}
-      />
-      <Button text="Se connecter" onPress={handleSubmit(onSignInPressed)} />
-      <Button
-        text="Mot de passe"
-        onPress={onForgotPasswordPressed}
-        type="TERTIARY"
-      />
-      <Button
-        text="Don't have an account? Create one"
-        onPress={onSingUpPressed}
-        type="TERTIARY"
-      />
-    </View>
+        <Login
+          name="password"
+          placeholder="Password"
+          secureTextEntry
+          control={control}
+          rules={{
+            required: "Password is required",
+            minLength: {
+              value: 3,
+              message: "Password should be minimum 3 characters long",
+            },
+          }}
+        />
+        <Button text="Se connecter" onPress={handleSubmit(onSignInPressed)} />
+        <Button
+          text="Mot de passe"
+          onPress={onForgotPasswordPressed}
+          type="TERTIARY"
+        />
+        <Button
+          text="Don't have an account? Create one"
+          onPress={onSingUpPressed}
+          type="TERTIARY"
+        />
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({

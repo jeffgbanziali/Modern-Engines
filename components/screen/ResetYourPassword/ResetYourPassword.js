@@ -20,20 +20,22 @@ const ResetYourPassword = () => {
   };
 
   return (
-    <View style={styles.root}>
-      <Text style={styles.title}>Réinitialiser votre mot de passe</Text>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.root}>
+        <Text style={styles.title}>Réinitialiser votre mot de passe</Text>
 
-      <Login
-        name="username"
-        control={control}
-        placeholder="Entrer votre identifiant"
-        rules={{
-          required: "Username is required",
-        }}
-      />
-      <Button text="Renvoyer" onPress={handleSubmit(onSendPressed)} />
-      <Button text="Se connecter" onPress={onSignInPress} type="QUATERY" />
-    </View>
+        <Login
+          name="username"
+          control={control}
+          placeholder="Entrer votre identifiant"
+          rules={{
+            required: "Username is required",
+          }}
+        />
+        <Button text="Renvoyer" onPress={handleSubmit(onSendPressed)} />
+        <Button text="Se connecter" onPress={onSignInPress} type="QUATERY" />
+      </View>
+    </ScrollView>
   );
 };
 
