@@ -15,10 +15,11 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   subtitleCTA: {
-    textDecorationLine: "underline",
+    color: "#5c5e62",
+    fontSize: 20,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#5c5e62",
   },
 

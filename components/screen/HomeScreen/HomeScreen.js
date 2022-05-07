@@ -29,7 +29,7 @@ export default function HomeScreen() {
               alignItems: "flex-start",
               fontSize: 20,
               fontWeight: "bold",
-              marginHorizontal: 30,
+              marginHorizontal: 40,
               color: "white",
             }}
           >

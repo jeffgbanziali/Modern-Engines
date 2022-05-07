@@ -14,8 +14,8 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
-      activeColor="#e91e63"
-      barStyle={{ backgroundColor: "tomato" }}
+      activeColor="white"
+      barStyle={{ backgroundColor: "#89C47B" }}
     >
       <Tab.Screen
         name="Accueil"

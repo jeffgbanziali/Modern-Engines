@@ -8,7 +8,7 @@ const CarsScreen = () => {
     navigation.navigate("Tesla");
   };
   return (
-    <ScrollView style={{ backgroundColor: "#2D55A2" }}>
+    <ScrollView style={{ backgroundColor: "#3C0A0A" }}>
       <View style={{ alignItems: "center", marginTop: 50, marginBottom: -100 }}>
         <Text style={{ fontSize: 40, color: "white" }}>Voitures</Text>
       </View>
@@ -28,7 +28,7 @@ const CarsScreen = () => {
               alignItems: "flex-start",
               fontSize: 20,
               fontWeight: "bold",
-              marginHorizontal: 30,
+              marginHorizontal: 50,
               color: "white",
             }}
           >

@@ -1,5 +1,7 @@
 import { View, Text, ScrollView } from "react-native";
 import React from "react";
+import SearchBar from "../../SearchBar/SearchBar";
+import Button from "../../Button/Button";
 
 const Accueil = () => {
   return (
@@ -11,6 +13,10 @@ const Accueil = () => {
         <Text style={{ fontSize: 16, fontWeight: "bold", marginTop: 2 }}>
           Modern engines
         </Text>
+      </View>
+      <View style={{ alignItems: "center", marginTop: 10 }}>
+        <SearchBar />
+        <Button text="Rechercher" />
       </View>
       <View style={{ marginTop: 2, alignItems: "center" }}>
         <Text style={{ fontSize: 16, fontWeight: "bold", marginTop: "50%" }}>

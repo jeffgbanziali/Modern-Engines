@@ -7,7 +7,7 @@ import {
   ImageBackground,
   ScrollView,
 } from "react-native";
-import bgImage from "../../../assets/Image/Model3.jpeg";
+import bgImage from "../../../assets/Image/Tesla/Model3.jpeg";
 import { useNavigation } from "@react-navigation/native";
 import { useForm, Controller } from "react-hook-form";
 import Login from "../../../components/Login/Login";
