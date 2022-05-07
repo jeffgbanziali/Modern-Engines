@@ -21,6 +21,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/icon-voiture-lrg.png")}
           />
@@ -43,6 +44,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/images.png")}
           />
@@ -67,6 +69,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/téléchargement.png")}
           />
@@ -88,6 +91,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/téléchargement.png")}
           />
@@ -109,6 +113,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/téléchargement.png")}
           />
@@ -124,7 +129,11 @@ export default function HomeScreen() {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{ marginTop: "-29%", marginLeft: 260, marginRight: 20 }}
+          style={{
+            marginTop: "-29%",
+            marginLeft: 260,
+            marginRight: 20,
+          }}
         >
           <Image
             style={{
@@ -132,6 +141,7 @@ export default function HomeScreen() {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
             source={require("../../../assets/Image/téléchargement.png")}
           />

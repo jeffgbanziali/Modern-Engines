@@ -1,5 +1,6 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
+import Button from "../../../Button/Button";
 import { useNavigation } from "@react-navigation/native";
 
 const CarsScreen = () => {
@@ -7,9 +8,13 @@ const CarsScreen = () => {
   const onTeslaPressed = () => {
     navigation.navigate("Tesla");
   };
+  const onReturnPressed = (data) => {
+    console.log(data);
+    navigation.navigate("HomeScreen");
+  };
   return (
     <ScrollView style={{ backgroundColor: "#3C0A0A" }}>
-      <View style={{ alignItems: "center", marginTop: 50, marginBottom: -100 }}>
+      <View style={{ alignItems: "center", marginTop: 10, marginBottom: -100 }}>
         <Text style={{ fontSize: 40, color: "white" }}>Voitures</Text>
       </View>
       <View style={{ spaceBetween: 20 }}>
@@ -18,10 +23,11 @@ const CarsScreen = () => {
             style={{
               position: "relative",
               marginHorizontal: 30,
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
+              borderRadius: 50,
             }}
-            source={require("../../../../assets/Image/icon-voiture-lrg.png")}
+            source={require("../../../../assets/Icons/Tesla1.jpg")}
           />
           <Text
             style={{
@@ -31,19 +37,18 @@ const CarsScreen = () => {
               marginHorizontal: 50,
               color: "white",
             }}
-          >
-            Tesla
-          </Text>
+          ></Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{ marginTop: "-29%", marginLeft: 130 }}>
+        <TouchableOpacity style={{ marginTop: "-30%", marginLeft: 130 }}>
           <Image
             style={{
               position: "relative",
               marginHorizontal: 30,
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
+              borderRadius: 50,
             }}
-            source={require("../../../../assets/Image/images.png")}
+            source={require("../../../../assets/Icons/Mercedes.png")}
           />
           <Text
             style={{
@@ -53,12 +58,10 @@ const CarsScreen = () => {
               marginHorizontal: 35,
               color: "white",
             }}
-          >
-            Bateaux
-          </Text>
+          ></Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{ marginTop: "-29%", marginLeft: 260, marginRight: 20 }}
+          style={{ marginTop: "-30%", marginLeft: 260, marginRight: 20 }}
         >
           <Image
             style={{
@@ -66,29 +69,29 @@ const CarsScreen = () => {
               marginHorizontal: 30,
               width: 90,
               height: 90,
+              borderRadius: 50,
             }}
-            source={require("../../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Icons/Lambo.png")}
           />
           <Text
             style={{
               fontSize: 20,
               fontWeight: "bold",
-              marginHorizontal: 30,
+              marginHorizontal: 34,
               color: "white",
             }}
-          >
-            Avions
-          </Text>
+          ></Text>
         </TouchableOpacity>
         <TouchableOpacity style={{ marginTop: "10%" }}>
           <Image
             style={{
               position: "relative",
               marginHorizontal: 30,
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
+              borderRadius: 50,
             }}
-            source={require("../../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Icons/BMW.png")}
           />
           <Text
             style={{
@@ -97,19 +100,18 @@ const CarsScreen = () => {
               marginHorizontal: 40,
               color: "white",
             }}
-          >
-            Avions
-          </Text>
+          ></Text>
         </TouchableOpacity>
-        <TouchableOpacity style={{ marginTop: "-29%", marginLeft: 130 }}>
+        <TouchableOpacity style={{ marginTop: "-31%", marginLeft: 130 }}>
           <Image
             style={{
               position: "relative",
               marginHorizontal: 30,
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
+              borderRadius: 50,
             }}
-            source={require("../../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Icons/Porsche.jpg")}
           />
           <Text
             style={{
@@ -118,21 +120,20 @@ const CarsScreen = () => {
               marginHorizontal: 40,
               color: "white",
             }}
-          >
-            Avions
-          </Text>
+          ></Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{ marginTop: "-29%", marginLeft: 260, marginRight: 20 }}
+          style={{ marginTop: "-31%", marginLeft: 260, marginRight: 20 }}
         >
           <Image
             style={{
               position: "relative",
               marginHorizontal: 30,
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
+              borderRadius: 70,
             }}
-            source={require("../../../../assets/Image/téléchargement.png")}
+            source={require("../../../../assets/Icons/ferr.jpg")}
           />
           <Text
             style={{
@@ -141,10 +142,11 @@ const CarsScreen = () => {
               marginHorizontal: 30,
               color: "white",
             }}
-          >
-            Avions
-          </Text>
+          ></Text>
         </TouchableOpacity>
+      </View>
+      <View style={{ marginTop: "80%", alignItems: "center" }}>
+        <Button text="Retour" onPress={onReturnPressed} />
       </View>
     </ScrollView>
   );

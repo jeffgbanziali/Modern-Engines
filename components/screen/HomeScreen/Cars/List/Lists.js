@@ -16,10 +16,12 @@ export default [
     image: require("../../../../../assets/Image/Tesla/Model3.jpeg"),
   },
   {
-    name: "Model Y",
-    tagline: "Order Online for",
-    taglineCTA: "Touchless Delivery",
-    image: require("../../../../../assets/Image/Tesla/ModelY.jpeg"),
+    name: "TESLA",
+    model: "Model: 3",
+    tagline: "Prix: 60,000 $",
+    taglineCTA: "Type: électrique",
+    color: "color: red",
+    image: require("../../../../../assets/Image/Tesla/Model3.jpeg"),
   },
   {
     name: "TESLA",

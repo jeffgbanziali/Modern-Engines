@@ -4,7 +4,7 @@ import React from "react";
 const SearchBar = () => {
   return (
     <View style={styles.searchBar}>
-      <TextInput style={styles.searchInput} placeholder="Rechercher..." />
+      <TextInput style={styles.searchInput} placeholder="Search here..." />
     </View>
   );
 };
@@ -14,16 +14,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 50,
     backgroundColor: "white",
-    paddingLeft: 8,
-    marginTop: 20,
-    borderRadius: 20,
-    justifyContent: "center",
+    borderRadius: 8,
   },
   searchInput: {
-    width: "100%",
-    height: "100%",
-    paddingLeft: 8,
-    fontSize: 16,
+    paddingLeft: 2,
+    alignItems: "center",
+    marginTop: 10,
   },
 });
+
 export default SearchBar;
