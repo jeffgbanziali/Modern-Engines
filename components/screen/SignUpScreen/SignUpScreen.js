@@ -98,7 +98,7 @@ const SingUpScreen = () => {
           secureTextEntry={true}
         />
         <Button text="S'inscrire" onPress={handleSubmit(onRegisterPressed)} />
-        <Button text="Se connecter" onPress={handleSubmit(onSignInPressed)} />
+        <Button text="Se connecter" onPress={onSignInPressed} />
 
         <Text style={styles.text}>
           By registering, you confirm that you accept our {""}

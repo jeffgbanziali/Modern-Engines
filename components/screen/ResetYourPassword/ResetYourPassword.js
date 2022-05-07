@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 //import Logo from '../../../assets/Logo/snack-icon.png';
 import Login from "../../../components/Login/Login";
 import Button from "../../../components/Button/Button";

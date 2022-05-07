@@ -1,18 +1,22 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const CarsScreen = () => {
+  const navigation = useNavigation();
+  const onTeslaPressed = () => {
+    navigation.navigate("Tesla");
+  };
   return (
     <ScrollView style={{ backgroundColor: "#2D55A2" }}>
       <View style={{ alignItems: "center", marginTop: 50, marginBottom: -100 }}>
         <Text style={{ fontSize: 40, color: "white" }}>Voitures</Text>
       </View>
       <View style={{ spaceBetween: 20 }}>
-        <TouchableOpacity style={{ marginTop: "40%" }}>
+        <TouchableOpacity style={{ marginTop: "40%" }} onPress={onTeslaPressed}>
           <Image
             style={{
               position: "relative",
-
               marginHorizontal: 30,
               width: 90,
               height: 90,

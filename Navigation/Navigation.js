@@ -10,6 +10,7 @@ import ResetYourPassword from "../components/screen/ResetYourPassword/ResetYourP
 import NewPassword from "../components/screen/NewPassword/NewPassword";
 import CarsScreen from "../components/screen/HomeScreen/Cars/CarsScreen";
 import TabNavigation from "./TabNavigation";
+import TeslaScreen from "../components/screen/HomeScreen/Cars/TeslaScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const Navigation = () => {
         <Stack.Screen name="ResetYourPassword" component={ResetYourPassword} />
         <Stack.Screen name="HomeScreen" component={TabNavigation} />
         <Stack.Screen name="Cars" component={CarsScreen} />
+        <Stack.Screen name="Tesla" component={TeslaScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
